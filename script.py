@@ -1,6 +1,3 @@
-"""
-questo commento è necessario per la action pylint per evitare errore
-"""
 import sys
 ## todo: installare requests per le GH actions
 #import requests
