@@ -1,6 +1,5 @@
 """
-questo commento è necessario per la action pylint per ebitare errore
-script.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+questo commento è necessario per la action pylint per evitare errore
 """
 import sys
 ## todo: installare requests per le GH actions
