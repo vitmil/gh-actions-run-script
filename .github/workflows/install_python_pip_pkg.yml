@@ -26,22 +26,16 @@ jobs:
       run: python script.py
     
 
-    - name: Unit test Verify output
-      #
-      ### Se diff la action esce con errore
-      # < response test: 109.115.83.49
-      # ---
-      # > response test: x.x.x.x
-      # Error: Process completed with exit code 1.
-      #
-      # run: |
-      #   echo "response test: x.x.x.x" > expected_output.txt
-      #   echo "response test: 109.115.83.49" > output.txt
-      #   diff output.txt expected_output.txt
+    - name: Unit-test Verify Output
       run: |
-        echo "response test: 109.115.83.49" > expected_output.txt
-        echo "response test: 109.115.83.49" > output.txt
-        diff output.txt expected_output.txt
-      
+        output=$(python script.py)
+        echo "Script output: $output"
+        if [ "$output" = "response test: 40.86.43.207" ]; then
+          echo "Output is as expected."
+        else
+          echo "Output is not as expected."
+          exit 1
+        fi      
+
     - name: Unit test chiamando file dal repo ./unit-test/unit_test.py
       run: python ./unit-test/unit_test.py
