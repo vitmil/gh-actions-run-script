@@ -21,6 +21,12 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         pip install requests
-        
+    
     - name: Run script
       run: python script.py
+    
+    - name: Verify output
+      run: |
+        echo "response test: x.x.x.x" > expected_output.txt
+        echo "response test: 109.115.83.49" > output.txt
+        diff output.txt expected_output.txt
