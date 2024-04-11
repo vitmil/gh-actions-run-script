@@ -30,7 +30,7 @@ jobs:
       run: |
         output=$(python script.py)
         echo "Script output: $output"
-        if [ "$output" = "response test: 40.86.43.207" ]; then
+        if [ "$output" = "response test: 52.159.150.27" ]; then
           echo "Output is as expected."
         else
           echo "Output is not as expected."
