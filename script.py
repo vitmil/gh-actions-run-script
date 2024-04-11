@@ -1,5 +1,4 @@
 import sys
-## todo: installare requests per le GH actions
 #import requests
 
 #response = requests.get('http://ident.me')
