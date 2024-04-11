@@ -33,8 +33,10 @@ jobs:
 
         if [[ "${output}" =~ "OK"   ]] ; then
           echo "[OK]: script request successfull"
+          export CI_CD_OUTCOME="OK"
         else
           echo "[KO]: script request failed"
+          export CI_CD_OUTCOME="KO"
           exit 1
         fi      
 
