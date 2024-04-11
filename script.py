@@ -15,8 +15,8 @@ if __name__ == "__main__":
     r = check_url_request(URL)
     if r[0]:
         response_text = r[1]
-        print(f"Ip Address: {response_text}")
+        print(f"[OK]: Ip Address: {response_text}")
     else:
-        print("\nrequest fallita\n")
+        print("\n[KO]:request fallita\n")
     
     
