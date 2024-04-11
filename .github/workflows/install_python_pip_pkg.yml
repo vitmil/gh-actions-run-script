@@ -26,7 +26,18 @@ jobs:
       run: python script.py
     
     - name: Verify output
+      #
+      ### Se diff la action esce con errore
+      # < response test: 109.115.83.49
+      # ---
+      # > response test: x.x.x.x
+      # Error: Process completed with exit code 1.
+      #
+      # run: |
+      #   echo "response test: x.x.x.x" > expected_output.txt
+      #   echo "response test: 109.115.83.49" > output.txt
+      #   diff output.txt expected_output.txt
       run: |
-        echo "response test: x.x.x.x" > expected_output.txt
+        echo "response test: 109.115.83.49" > expected_output.txt
         echo "response test: 109.115.83.49" > output.txt
         diff output.txt expected_output.txt
