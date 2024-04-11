@@ -11,4 +11,4 @@ import sys
 print()
 print('Hello DevOps')
 print()
-print(os.version)
+print(sys.version)
