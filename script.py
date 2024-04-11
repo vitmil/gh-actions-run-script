@@ -1,9 +1,10 @@
 import sys
 ## TODO: installare requests nelle actions...
-#import requests
-#response = requests.get('http://ident.me')
-#print(f"response test: {response.text}")
+import requests
+response = requests.get('http://ident.me')
 print()
-print('Hello DevOps')
+print(f"response test: {response.text}")
 print()
-print(sys.version)
+#print('Hello DevOps')
+#print()
+#print(sys.version)
