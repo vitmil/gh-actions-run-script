@@ -33,10 +33,12 @@ jobs:
 
         if [[ "${output}" =~ "OK"   ]] ; then
           echo "[OK]: script request successfull"
-          export CI_CD_OUTCOME="OK"
+          #export CI_CD_OUTCOME="OK"
+          echo "CI_CD_OUTCOME=OK" >> $GITHUB_ENV
         else
           echo "[KO]: script request failed"
-          export CI_CD_OUTCOME="KO"
+          #export CI_CD_OUTCOME="KO"
+          echo "CI_CD_OUTCOME=KO" >> $GITHUB_ENV
           exit 1
         fi      
 
