@@ -7,8 +7,9 @@ on:
 jobs:
   build:
 
-    runs-on: ubuntu-latest
-
+    #runs-on: ubuntu-latest
+    runs-on: vps-ubuntu-ovh
+    
     steps:
     - uses: actions/checkout@v2
 

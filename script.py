@@ -1,4 +1,5 @@
 import requests
+import socket
 
 def check_url_request(url):
     """ funzione request """
@@ -11,12 +12,15 @@ def check_url_request(url):
 
 if __name__ == "__main__":
 
+    print()
+    print('Hostname:', socket.gethostname())
+    print()
     URL = "http://ident.me"
     r = check_url_request(URL)
     if r[0]:
         response_text = r[1]
-        print(f"[OK]: Ip Address: {response_text}")
+        print(f"[OK] Public Ip Address: {response_text}\n")
     else:
-        print("\n[KO]:request fallita\n")
+        print("\n[KO]:Impossibile determinare l'Ip Pubblico. Request fallita vs http://ident.me\n")
     
     
