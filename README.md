@@ -1,2 +1,2 @@
 # gh-actions-demo
-terst actions
+test actions
