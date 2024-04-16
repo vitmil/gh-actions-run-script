@@ -1,0 +1,46 @@
+name: Python Request Application
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Set up Python 3.12
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.12
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install requests
+    
+    - name: Run script
+      run: python script.py
+    
+
+    - name: Unit-test Verify Output
+      run: |
+        output=$(python script.py)
+        echo "Script output: $output"
+
+        if [[ "${output}" =~ "OK"   ]] ; then
+          echo "[OK]: script request successfull"
+          #export CI_CD_OUTCOME="OK"
+          echo "CI_CD_OUTCOME=OK" >> $GITHUB_ENV
+        else
+          echo "[KO]: script request failed"
+          #export CI_CD_OUTCOME="KO"
+          echo "CI_CD_OUTCOME=KO" >> $GITHUB_ENV
+          exit 1
+        fi      
+
+    - name: Unit test chiamando file dal repo ./unit-test/unit_test.py
+      run: python ./unit-test/unit_test.py
