@@ -1,1 +1,1 @@
-print(vars.MY_VAR_1)
+print(MY_VAR_1)
