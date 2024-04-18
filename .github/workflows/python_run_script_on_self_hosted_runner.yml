@@ -1,17 +1,15 @@
-name: run python script on self-hosted runner
+name: run script request_ident_me.py on self-hosted runner
 
 on:
   push:
     branches: [ main ]
 
 jobs:
-
-  build:
+  job_1:
     if: github.ref == 'refs/heads/branch_che_non_esiste' 
-    
     #runs-on: ubuntu-latest
     runs-on: vps-ubuntu-ovh
-    
+
     steps:
     - uses: actions/checkout@v2
 
@@ -26,12 +24,11 @@ jobs:
         pip install requests
     
     - name: Run script
-      run: python script.py
+      run: python request_ident_me.py
     
-
     - name: Unit-test Verify Output
       run: |
-        output=$(python script.py)
+        output=$(python request_ident_me.py)
         echo "Script output: $output"
 
         if [[ "${output}" =~ "OK"   ]] ; then
