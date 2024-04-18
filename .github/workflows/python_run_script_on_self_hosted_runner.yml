@@ -5,8 +5,10 @@ on:
     branches: [ main ]
 
 jobs:
-  build:
 
+  build:
+    if: github.ref == 'refs/heads/branch_che_non_esiste' 
+    
     #runs-on: ubuntu-latest
     runs-on: vps-ubuntu-ovh
     
