@@ -1,4 +1,4 @@
-name: Python Request Application
+name: run python script on self-hosted runner
 
 on:
   push:
